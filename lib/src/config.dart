@@ -21,6 +21,7 @@ class MoamalatPaymentConfig {
   final String? trnxRefNumber;
   final String? customerId;
   final String? customerEmail;
+  final String? merchantReference;
   final String transactionDate;
   final Duration timeout;
   final String? returnUrl;
@@ -36,6 +37,7 @@ class MoamalatPaymentConfig {
     this.trnxRefNumber,
     this.customerId,
     this.customerEmail,
+    this.merchantReference,
     this.timeout = const Duration(seconds: 10),
     this.returnUrl,
   });

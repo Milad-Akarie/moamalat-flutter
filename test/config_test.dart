@@ -25,6 +25,7 @@ void main() {
         currencyCode: 434,
         secureHash: 'hash',
         transactionDate: '240307090501023',
+        merchantReference: 'ref-1',
       );
 
       expect(

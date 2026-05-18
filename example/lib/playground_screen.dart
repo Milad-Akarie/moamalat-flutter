@@ -39,7 +39,7 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
   String _demoCardHolder = _defaultCardHolder;
   String _demoExpiry = _defaultExpiry;
 
-  late final TextEditingController _merchantIdCtrl = TextEditingController(
+  final TextEditingController _merchantIdCtrl = TextEditingController(
     text: _envMerchantId,
   );
   late final TextEditingController _terminalIdCtrl = TextEditingController(
@@ -52,6 +52,7 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
   final TextEditingController _transactionDateCtrl = TextEditingController(
     text: "",
   );
+  final TextEditingController _merchantReferenceCtrl = TextEditingController();
 
   MoamalatEnvironment _environment = MoamalatEnvironment.testing;
   String? _resultLabel;
@@ -98,6 +99,7 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
     _secureHashCtrl.dispose();
     _amountCtrl.dispose();
     _transactionDateCtrl.dispose();
+    _merchantReferenceCtrl.dispose();
     super.dispose();
   }
 
@@ -122,6 +124,9 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
       amount: amount,
       transactionDate: _transactionDateCtrl.text.trim(),
       currencyCode: 434,
+      merchantReference: _merchantReferenceCtrl.text.trim().isEmpty
+          ? null
+          : _merchantReferenceCtrl.text.trim(),
     );
   }
 
@@ -237,6 +242,7 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
               _input(_secureHashCtrl, 'Secure hash (hex)'),
               _input(_amountCtrl, 'Amount'),
               _input(_transactionDateCtrl, 'Transaction date'),
+              _input(_merchantReferenceCtrl, 'Merchant reference (optional)'),
               const SizedBox(height: 16),
               FilledButton.icon(
                 onPressed: _showSheet,

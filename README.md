@@ -47,6 +47,7 @@ class CheckoutPage extends StatelessWidget {
       customerId: 'cust-42',
       customerMobile: '+218900000000',
       customerEmail: 'cust@example.com',
+      merchantReference: 'merchant-ref-123',
     );
 
     return Scaffold(

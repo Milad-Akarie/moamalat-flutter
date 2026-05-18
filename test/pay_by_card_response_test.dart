@@ -55,6 +55,7 @@ void main() {
       secureHash: '0B' * 20,
       transactionDate: '20240101T000000Z',
       returnUrl: 'https://merchant.example/return',
+      merchantReference: 'ref-1',
     );
 
     test('shouldHandleThreeDSRedirect requires the return URL + Success param',
