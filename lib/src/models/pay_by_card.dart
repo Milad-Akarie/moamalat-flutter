@@ -63,7 +63,7 @@ class PayByCardParameters {
     String? tokenCustomerSession,
   }) {
     return PayByCardParameters(
-      amountTrxn: config.amount.toInt().toString(),
+      amountTrxn: config.amount.toString(),
       currencyCodeTrxn: config.currencyCode.toString(),
       merchantId: config.merchantId,
       terminalId: config.terminalId,
@@ -104,9 +104,10 @@ class PayByCardParameters {
       'IsWebRequest': isWebRequest,
       'IsMobileSDK': isMobileSDK,
       'Success': false,
-      if(tokenCustomerSession !=null) 'TokenCustomerSession': tokenCustomerSession,
-      if(customerEmail != null) 'CustomerEmail': customerEmail,
-      if(tokenCustomerId != null) 'TokenCustomerId': tokenCustomerId,
+      if (tokenCustomerSession != null)
+        'TokenCustomerSession': tokenCustomerSession,
+      if (customerEmail != null) 'CustomerEmail': customerEmail,
+      if (tokenCustomerId != null) 'TokenCustomerId': tokenCustomerId,
     };
   }
 }

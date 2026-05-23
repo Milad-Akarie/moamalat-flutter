@@ -15,7 +15,7 @@ class MoamalatPaymentConfig {
   final MoamalatEnvironment environment;
   final String merchantId;
   final String terminalId;
-  final double amount;
+  final int amount;
   final int currencyCode;
   final String secureHash;
   final String? trnxRefNumber;
